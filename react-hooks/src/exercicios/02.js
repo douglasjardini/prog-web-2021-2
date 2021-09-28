@@ -12,9 +12,9 @@ export default function Exercicio02({initialName = ''}) {
         // é executado apenas uma vez, no carregamento inicial da página
         () => readStorage() || initialName    
     )
-    const [count, setCount] = React.useState(0)
+    const [count, setCount] = React.useState(() => 0)
 
-    function readstorage() {
+    function readStorage() {
         console.count('Lido localStorage')
         return window.localStorage.getItem('name')
     }
